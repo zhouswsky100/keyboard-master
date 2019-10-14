@@ -1,0 +1,35 @@
+<ion-view  view-title="登录" hide-tabs="true" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button class="button back-button buttons button-light button-clear header-item" ng-click="goBackView()">
+      <i class="icon ion-ios-arrow-left color-fff"></i> 
+    </button>
+  </ion-nav-buttons>
+  <div id="login">
+    <ion-content class="background" overflow-scroll="true" >
+      <form class="list">
+        <label class="item item-input g-mtb-10">
+          <div class="keyboardWrapper">
+            <input type="text" required  placeholder="手机号码/用户名" ng-model="login.loginName" name="login.loginName" keyboard>
+            <div class="imitateCursor animation">{{login.loginName}}</div>
+          </div>
+
+         <!--  <input type="text" required ng-model="login.loginName" placeholder="手机号码/用户名" > -->
+        </label>
+        <label class="item item-input g-mtb-10">
+          <div class="keyboardWrapper">
+            <input type="text" required  placeholder="请输入登录密码" ng-model="login.loginPwd1" password="login.loginPwd" name="login.loginPwd1" keyboard>
+            <div class="imitateCursor animation">{{login.loginPwd | passwordFormat}}</div>
+          </div>
+          <!-- <input type="password" required ng-model="login.loginPwd" placeholder="请输入登录密码" > -->
+          <a class="item-note g-mr-10" href="#/forgetLoginPassword1">
+            忘记密码 
+          </a>
+        </label>
+        <div class="g-mtb-10 g-pl-10 g-pr-10">
+          <input type="submit" class="button button-block button-orange" value="登录" ng-click="doLogin()">
+          <a class="button button-block button-orange" href="#/registerNew">注册</a> 
+        </div>
+      </form>
+    </ion-content>
+  </div>
+</ion-view>
